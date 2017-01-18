@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Examples</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .examples {
+            margin-bottom: 20px;
+        }
+
+        .examples + pre,
+        .examples ~ br,
+        .examples ~ button {
+            display: none;
+        }
+
+        .examples:focus + pre,
+        .examples:focus ~ br,
+        .examples:focus ~ button {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section>
+            <h2>Что такое DOM:</h2>
+            <p>
+                Основным инструментом работы и динамических изменений на странице является DOM (Document Object Model) – объектная модель, используемая для XML/HTML-документов.
+                Согласно DOM-модели, документ является иерархией, деревом. Каждый HTML-тег образует узел дерева с типом «элемент». Вложенные в него теги становятся дочерними узлами. Для представления текста создаются узлы с типом «текст».
+                DOM – это представление документа в виде дерева объектов
+            </p>
+        </section>
+        <br>
+        <br>
+        <section>
+            <h2>Что такое теги:</h2>
+            p, div, span, a, table, ul, img, audio, video, svg, custom-tag
+            <br>
+            <br>
+            <p>
+                <small>*стили по умолчанию</small>
+            </p>
+        </section>
+        <br>
+        <br>
+        <section>
+            <h2>Как тегам задаются стили:</h2>
+            <ul>
+                <li>
+                    <p>1. С помощью подключения файла стилей в теге head страницы:</p>
+<pre>
+&lt;link rel="stylesheet" href="styles.css"&gt;
+</pre>
+                </li>
+                <li>
+                        <p>2. С помощью добавления стилей в специальный тег:</p>
+<pre>
+&lt;style&gt;
+    p {
+        font-style: italic;
+    }
+
+    span {
+        display: block;
+    }
+&lt;/style&gt;
+</pre>
+                </li>
+                <li>
+                    <p>3. С помощью добавления стилей "инлайново" в атрибут "style" каждому элементу:</p>
+<pre>
+&lt;p style="background-color: black; color: #fff;"&gt;Текст для примера&lt;/p&gt;
+</pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Приоритетность стилей:</h2>
+<pre>
+&lt;p class="example-text" id="example_text_id" style="background-color: black; color: #fff;"&gt;Текст для примера&lt;/p&gt;
+
+&lt;style&gt;
+    p.example-text {
+        text-transform: uppercase;
+    }
+
+    .example-text {
+        text-transform: lowercase;
+    }
+&lt;/style&gt;
+</pre>
+            <br>
+            <br>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td>Селектор тега:</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Селектор класса:</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Селектор ID:</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Inline-стиль:</td>
+                    <td>1000</td>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <h3>Расчет веса селектора:</h3>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Селектор</th>
+                    <th>ID</th>
+                    <th>Класс</th>
+                    <th>Тег</th>
+                    <th>Общий вес</th>
+                </tr>
+                <tr>
+                    <td>p</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>.your_class</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>p.your_class</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>#your_id</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>#your_id p</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>101</td>
+                </tr>
+                <tr>
+                    <td>#your_id .your_class</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>110</td>
+                </tr>
+                <tr>
+                    <td>p a</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>#your_id #my_id .your_class p a</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>212</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+        <br>
+        <br>
+        <section>
+            <h2>Примеры css-селекторов</h2>
+            <button class="examples btn btn-default">Показать</button>
+<pre>
+* {
+    border: 1px solid black;
+}
+
+#container {
+    width: 960px;
+    margin: auto;
+}
+
+.error {
+    color: red;
+}
+
+li a {
+    text-decoration: none;
+}
+
+a { color: red; }
+ul { margin-left: 0; }
+
+a:link { color: red; }
+a:visted { color: purple; }
+
+ul + p {
+   color: red;
+}
+
+div#container > ul {
+    border: 1px solid black;
+}
+
+ul ~ p {
+    color: red;
+}
+
+a[title] {
+    color: green;
+}
+
+a[href="http://net.tutsplus.com"] {
+    color: #1f6053; /* nettuts green */
+}
+
+a[href*="tuts"] {
+    color: #1f6053; /* nettuts green */
+}
+
+a[href^="http"] {
+    background: url(path/to/external/icon.png) no-repeat;
+    padding-left: 10px;
+}
+
+a[href$=".jpg"] {
+    color: red;
+}
+
+a[data-filetype="image"] {
+    color: red;
+}
+
+a[data-info~="external"] {
+    color: red;
+}
+
+a[data-info~="image"] {
+    border: 1px solid black;
+}
+
+input[type=radio]:checked {
+    border: 1px solid black;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+}
+
+.clearfix {
+    *display: inline-block;
+    _height: 1%;
+}
+
+div:hover {
+    background: #e3e3e3;
+}
+
+div:not(#container) {
+    color: blue;
+}
+
+p::first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+p::first-letter {
+    float: left;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: cursive;
+    padding-right: 2px;
+}
+
+li:nth-child(3) {
+    color: red;
+}
+
+li:nth-last-child(2) {
+    color: red;
+}
+
+ul:nth-of-type(3) {
+    border: 1px solid black;
+}
+
+ul:nth-last-of-type(3) {
+    border: 1px solid black;
+}
+
+ul > li:first-child {
+    color: green;
+}
+
+ul > li:last-child {
+    color: green;
+}
+
+div p:only-child {
+    color: red;
+}
+
+li:only-of-type {
+    font-weight: bold;
+}
+
+ul:first-of-type > li:nth-child(2) {
+    font-weight: bold;
+}
+</pre>
+            <br>
+            <button class="examples btn btn-danger">Скрыть</button>
+        </section>
+        <br>
+        <br>
+        <section>
+            <h2>Установка Selenium2Library и запуск тестового проекта:</h2>
+            <p>На компьютере должен быть установлен Phyton с "pip"</p>
+            <p>Для работы с браузером FireFox в OS Windows может понадобится установка драйвера geckodriver, для этого:</p>
+<ul>
+    <li>Качаем последюю версию дравера <a href="https://github.com/mozilla/geckodriver/releases" target="_blank">отсюда</a></li>
+    <li>Копируем файл из архива, к примеру, C:\Users\USERNAME\geckodriver\</li>
+    <li>Добавляем этот путь в переменную PATH системы как показано <a href="http://prntscr.com/dx3dt0" target="_blank">тут</a></li>
+</ul>
+            <p>В консоли в нужной директории (C:\Users\USERNAME\) запускаем команды:</p>
+<pre>
+pip install robotframework
+pip install robotframework-selenium2library
+</pre>
+            <p>Качаем тестовый проект (или клонируем с помощью git'a) <a href="https://bitbucket.org/robotframework/webdemo" target="_blank">здесь</a> и распаковываем в определенную папку</p>
+            <p>В консоли переходим в папку webdemo тестового проекта и запускаем тестовый проект:</p>
+<pre>
+python demoapp/server.py
+</pre>
+            <p>и запускаем тестирование:</p>
+<pre>
+python -m robot.run login_tests/
+</pre>
+        </section>
+        <br>
+        <br>
+        <section>
+            <h2>Методы Selenium2Library:</h2>
+            <a target="_blank" href="http://robotframework.org/Selenium2Library/Selenium2Library.html">Методы Selenium2Library</a>
+        </section>
+        <br>
+        <br>
+        <section>
+            <h2>Примеры jQuery:</h2>
+            <button class="examples btn btn-default">Показать</button>
+<pre>
+$("p").hide();
+
+$("#test").val();
+
+$(".test").show();
+
+$(".test").each(function(element) {
+    $(this).attr('checked', 'checked');
+
+    element.css({
+        backgroundColor: 'red'
+    });
+});
+
+$(".test").click();
+
+$(".test").hover();
+
+$(".test").addClass();
+
+$(".test").removeClass();
+
+$(".test").hasClass();
+
+$(document).ready(function(){
+    ...
+});
+</pre>
+            <button class="examples btn btn-danger">Скрыть</button>
+        </section>
+        <br>
+        <br>
+        <section>
+            <h2>Полезные ссылки</h2>
+            <ul>
+                <li><a target="_blank" href="https://habrahabr.ru/post/114772/">XPath selectors</a></li>
+                <li><a target="_blank" href="https://github.com/jquery/sizzle/wiki">Sizzle selectors</a></li>
+                <li><a target="_blank" href="https://api.jquery.com/category/selectors/">jQuery selectors</a></li>
+                <li><a target="_blank" href="http://api.jquery.com/">jQuery API</a></li>
+                <li><a target="_blank" href="http://www.idg.net.ua/blog/uchebnik-css/azy-css/kaskadnost">Каскадность CSS</a></li>
+                <li><a target="_blank" href="https://webref.ru/ref">Справочник по HTML/CSS</a></li>
+                <li><a target="_blank" href="https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">30 селекторов которые стоит знать</a></li>
+                <li><a target="_blank" href="http://robotframework.org/Selenium2Library/Selenium2Library.html">W3 HTML Validator</a></li>
+                <li><a target="_blank" href="https://msdn.microsoft.com/ru-ru/library/ms256471(v=VS.90).aspx">Синтаксис XPATH</a></li>
+                <li><a target="_blank" href="https://bitbucket.org/robotframework/webdemo">Тестовый проект ROBOT</a></li>
+            </ul>
+        </section>
+        <br>
+        <br>
+    </div>
+</body>
+</html>
