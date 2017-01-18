@@ -393,7 +393,8 @@ ul:first-of-type > li:nth-child(2) {
                     <td>p + *</td>
                     <td>//p/following-sibling::*[0]</td>
                 </tr>
-                </tbody></table>
+                </tbody>
+            </table>
         </section>
         <br>
         <br>
@@ -405,38 +406,6 @@ ul:first-of-type > li:nth-child(2) {
                 <li>Sizzle - Sizzle('.ololo')</li>
                 <li>jQuery - $('.trololo')</li>
             </ul>
-        </section>
-        <br>
-        <br>
-        <section>
-            <h2>Установка Selenium2Library и запуск тестового проекта:</h2>
-            <p>На компьютере должен быть установлен Phyton с "pip"</p>
-            <p>Для работы с браузером FireFox в OS Windows может понадобится установка драйвера geckodriver, для этого:</p>
-<ul>
-    <li>Качаем последюю версию дравера <a href="https://github.com/mozilla/geckodriver/releases" target="_blank">отсюда</a></li>
-    <li>Копируем файл из архива, к примеру, C:\Users\USERNAME\geckodriver\</li>
-    <li>Добавляем этот путь в переменную PATH системы как показано <a href="http://prntscr.com/dx3dt0" target="_blank">тут</a></li>
-</ul>
-            <p>В консоли в нужной директории (C:\Users\USERNAME\) запускаем команды:</p>
-<pre>
-pip install robotframework
-pip install robotframework-selenium2library
-</pre>
-            <p>Качаем тестовый проект (или клонируем с помощью git'a) <a href="https://bitbucket.org/robotframework/webdemo" target="_blank">здесь</a> и распаковываем в определенную папку</p>
-            <p>В консоли переходим в папку webdemo тестового проекта и запускаем тестовый проект:</p>
-<pre>
-python demoapp/server.py
-</pre>
-            <p>и запускаем тестирование:</p>
-<pre>
-python -m robot.run login_tests/
-</pre>
-        </section>
-        <br>
-        <br>
-        <section>
-            <h2>Методы Selenium2Library:</h2>
-            <a target="_blank" href="http://robotframework.org/Selenium2Library/Selenium2Library.html">Методы Selenium2Library</a>
         </section>
         <br>
         <br>
