@@ -341,6 +341,74 @@ ul:first-of-type > li:nth-child(2) {
         <br>
         <br>
         <section>
+            <h2>XPath</h2>
+            <table class="table">
+                <tbody><tr>
+                    <th>Цель</th>
+                    <th>CSS 3</th>
+                    <th>XPath</th>
+                </tr>
+                <tr>
+                    <td>Все элементы</td>
+                    <td>*</td>
+                    <td>//*</td>
+                </tr>
+                <tr>
+                    <td>Все параграфы</td>
+                    <td>p</td>
+                    <td>//p</td>
+                </tr>
+                <tr>
+                    <td>Все дочерние элементы</td>
+                    <td>p &gt; *</td>
+                    <td>//p/*</td>
+                </tr>
+                <tr>
+                    <td>Элемент по идентификатору</td>
+                    <td>#foo</td>
+                    <td>//*[@id=’foo’]</td>
+                </tr>
+                <tr>
+                    <td>Элемент(ы) по классу</td>
+                    <td>.foo</td>
+                    <td>//*[contains(@class,’foo’)] <a href="#class"><sup>1</sup></a></td>
+                </tr>
+                <tr>
+                    <td>Элементы по имени атрибута</td>
+                    <td>*[title]</td>
+                    <td>//*[@title]</td>
+                </tr>
+                <tr>
+                    <td>Первые дочерние элементы в параграфах</td>
+                    <td>p &gt; *:first-child</td>
+                    <td>//p/*[0]</td>
+                </tr>
+                <tr>
+                    <td>Все ссылки в параграфах</td>
+                    <td><i>Not possible</i></td>
+                    <td>//p[a]</td>
+                </tr>
+                <tr>
+                    <td>Следующий элемент</td>
+                    <td>p + *</td>
+                    <td>//p/following-sibling::*[0]</td>
+                </tr>
+                </tbody></table>
+        </section>
+        <br>
+        <br>
+        <section>
+            <h2>XPath vs JavaScript vs Sizzle vs jQuery</h2>
+            <ul>
+                <li>XPath - .//*[contains(@class,'head')]</li>
+                <li>JS - document.querySelectorAll('div')</li>
+                <li>Sizzle - Sizzle('.ololo')</li>
+                <li>jQuery - $('.trololo')</li>
+            </ul>
+        </section>
+        <br>
+        <br>
+        <section>
             <h2>Установка Selenium2Library и запуск тестового проекта:</h2>
             <p>На компьютере должен быть установлен Phyton с "pip"</p>
             <p>Для работы с браузером FireFox в OS Windows может понадобится установка драйвера geckodriver, для этого:</p>
@@ -412,6 +480,7 @@ $(document).ready(function(){
             <h2>Полезные ссылки</h2>
             <ul>
                 <li><a target="_blank" href="https://habrahabr.ru/post/114772/">XPath selectors</a></li>
+                <li><a target="_blank" href="https://msdn.microsoft.com/ru-ru/library/ms256471(v=VS.90).aspx">Синтаксис XPATH</a></li>
                 <li><a target="_blank" href="https://github.com/jquery/sizzle/wiki">Sizzle selectors</a></li>
                 <li><a target="_blank" href="https://api.jquery.com/category/selectors/">jQuery selectors</a></li>
                 <li><a target="_blank" href="http://api.jquery.com/">jQuery API</a></li>
@@ -419,7 +488,6 @@ $(document).ready(function(){
                 <li><a target="_blank" href="https://webref.ru/ref">Справочник по HTML/CSS</a></li>
                 <li><a target="_blank" href="https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048">30 селекторов которые стоит знать</a></li>
                 <li><a target="_blank" href="http://robotframework.org/Selenium2Library/Selenium2Library.html">W3 HTML Validator</a></li>
-                <li><a target="_blank" href="https://msdn.microsoft.com/ru-ru/library/ms256471(v=VS.90).aspx">Синтаксис XPATH</a></li>
                 <li><a target="_blank" href="https://bitbucket.org/robotframework/webdemo">Тестовый проект ROBOT</a></li>
             </ul>
         </section>
