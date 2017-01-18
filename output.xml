@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170118 15:45:16.380" generator="Robot 3.0.1 (Python 2.7.10 on win32)">
+<suite source="C:\OpenServer\domains\qa.intro\webdemo\login_tests\valid_login.robot" id="s1" name="Valid Login">
+<test id="s1-t1" name="Valid Login">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20170118 15:45:16.641" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:7272/'</msg>
+<status status="PASS" endtime="20170118 15:45:29.798" starttime="20170118 15:45:16.641"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170118 15:45:29.899" starttime="20170118 15:45:29.798"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170118 15:45:29.902" starttime="20170118 15:45:29.900"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20170118 15:45:29.926" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" endtime="20170118 15:45:29.926" starttime="20170118 15:45:29.903"></status>
+</kw>
+<status status="PASS" endtime="20170118 15:45:29.926" starttime="20170118 15:45:29.902"></status>
+</kw>
+<status status="PASS" endtime="20170118 15:45:29.926" starttime="20170118 15:45:16.641"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>demo</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20170118 15:45:29.928" level="INFO">Typing text 'demo' into text field 'username_field'</msg>
+<status status="PASS" endtime="20170118 15:45:30.143" starttime="20170118 15:45:29.928"></status>
+</kw>
+<status status="PASS" endtime="20170118 15:45:30.143" starttime="20170118 15:45:29.927"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>mode</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20170118 15:45:30.146" level="INFO">Typing text 'mode' into text field 'password_field'</msg>
+<status status="PASS" endtime="20170118 15:45:30.270" starttime="20170118 15:45:30.145"></status>
+</kw>
+<status status="PASS" endtime="20170118 15:45:30.270" starttime="20170118 15:45:30.144"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>dom=document.querySelectorAll("[value='LOGIN']")</arg>
+</arguments>
+<msg timestamp="20170118 15:45:30.272" level="INFO">Clicking button 'dom=document.querySelectorAll("[value='LOGIN']")'.</msg>
+<status status="PASS" endtime="20170118 15:45:30.403" starttime="20170118 15:45:30.272"></status>
+</kw>
+<status status="PASS" endtime="20170118 15:45:30.404" starttime="20170118 15:45:30.271"></status>
+</kw>
+<kw name="Welcome Page Should Be Open" library="resource">
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20170118 15:45:30.485" level="INFO">Current location is 'http://localhost:7272/welcome.html'.</msg>
+<status status="PASS" endtime="20170118 15:45:30.485" starttime="20170118 15:45:30.405"></status>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Welcome Page</arg>
+</arguments>
+<msg timestamp="20170118 15:45:30.502" level="INFO">Page title is 'Welcome Page'.</msg>
+<status status="PASS" endtime="20170118 15:45:30.502" starttime="20170118 15:45:30.485"></status>
+</kw>
+<status status="PASS" endtime="20170118 15:45:30.502" starttime="20170118 15:45:30.404"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170118 15:45:30.816" starttime="20170118 15:45:30.503"></status>
+</kw>
+<status status="PASS" endtime="20170118 15:45:30.816" critical="yes" starttime="20170118 15:45:16.640"></status>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" endtime="20170118 15:45:30.818" starttime="20170118 15:45:16.384"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Valid Login" pass="1">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

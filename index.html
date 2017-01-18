@@ -399,6 +399,78 @@ ul:first-of-type > li:nth-child(2) {
         <br>
         <br>
         <section>
+            <h2>Selenium2Library</h2>
+            <table class="table">
+                <tbody><tr>
+                    <td><b>Strategy</b></td>
+                    <td><b>Example</b></td>
+                    <td><b>Description</b></td>
+                </tr>
+                <tr>
+                    <td>identifier</td>
+                    <td>Click Element <span class="name">|</span> identifier=my_element</td>
+                    <td>Matches by @id or @name attribute</td>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>Click Element <span class="name">|</span> id=my_element</td>
+                    <td>Matches by @id attribute</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>Click Element <span class="name">|</span> name=my_element</td>
+                    <td>Matches by @name attribute</td>
+                </tr>
+                <tr>
+                    <td>xpath</td>
+                    <td>Click Element <span class="name">|</span> xpath=//div[@id='my_element']</td>
+                    <td>Matches with arbitrary XPath expression</td>
+                </tr>
+                <tr>
+                    <td>dom</td>
+                    <td>Click Element <span class="name">|</span> dom=document.images[56]</td>
+                    <td>Matches with arbitrary DOM express</td>
+                </tr>
+                <tr>
+                    <td>link</td>
+                    <td>Click Element <span class="name">|</span> link=My Link</td>
+                    <td>Matches anchor elements by their link text</td>
+                </tr>
+                <tr>
+                    <td>partial link</td>
+                    <td>Click Element <span class="name">|</span> partial link=y Lin</td>
+                    <td>Matches anchor elements by their partial link text</td>
+                </tr>
+                <tr>
+                    <td>css</td>
+                    <td>Click Element <span class="name">|</span> css=div.my_class</td>
+                    <td>Matches by CSS selector</td>
+                </tr>
+                <tr>
+                    <td>jquery</td>
+                    <td>Click Element <span class="name">|</span> jquery=div.my_class</td>
+                    <td>Matches by jQuery/sizzle selector</td>
+                </tr>
+                <tr>
+                    <td>sizzle</td>
+                    <td>Click Element <span class="name">|</span> sizzle=div.my_class</td>
+                    <td>Matches by jQuery/sizzle selector</td>
+                </tr>
+                <tr>
+                    <td>tag</td>
+                    <td>Click Element <span class="name">|</span> tag=div</td>
+                    <td>Matches by HTML tag name</td>
+                </tr>
+                <tr>
+                    <td>default*</td>
+                    <td>Click Link    <span class="name">|</span> default=page?a=b</td>
+                    <td>Matches key attributes with value after first '='</td>
+                </tr>
+                </tbody></table>
+        </section>
+        <br>
+        <br>
+        <section>
             <h2>XPath vs JavaScript vs Sizzle vs jQuery</h2>
             <ul>
                 <li>XPath - .//*[contains(@class,'head')]</li>
